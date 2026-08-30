@@ -17,7 +17,7 @@ or merge to `main`.
 - Deliverable: an Astro project at repo root that builds cleanly, 4 pages matching the mockup,
   a Pages deploy workflow, an updated `README.md`, delivered on a branch via PR.
 - Hard constraints:
-  - **Content is ported verbatim** — same dummy name (`Alex Rivera`), role, About blurb, 3
+  - **Content is ported verbatim** — same dummy name (`Nelson Eiró`), role, About blurb, 3
     projects, 2 blog stubs, CV sections. No new copy, no real personal data.
   - **Never push or merge to `main`.** Branch → commit → PR. Landing is a human action.
   - **No Claude session links or session trailers** in commit messages or the PR body.
