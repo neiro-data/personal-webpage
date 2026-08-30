@@ -29,3 +29,4 @@ pnpm-debug.log*
 [Tt][Oo]-[Dd][Oo]-*.md
 *[Hh][Aa][Nn][Dd][Oo][Ff][Ff]*.md
 claude_interaction_steps.md
+.vscode/
