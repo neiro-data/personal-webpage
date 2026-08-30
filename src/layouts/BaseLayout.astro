@@ -1,0 +1,30 @@
+---
+import Nav from '../components/Nav.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  active: 'home' | 'cv' | 'projects' | 'blog';
+}
+
+const { title, active } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex Rivera — {title}</title>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Alex Rivera</h1>
+    <Nav active={active} />
+  </header>
+  <slot />
+  <footer>Demo variant: astro-modern — approximates a minimal full-width Astro portfolio theme.</footer>
+</div>
+</body>
+</html>
