@@ -1,43 +1,44 @@
 # personal-webpage
 
-Repo for a personal site. **Design decision is still open** — currently comparing four static
-mockups before committing to a real framework build.
+Personal site, built with [Astro](https://astro.build) in the `astro-modern` style, deployed to
+GitHub Pages.
 
-## Comparing the design variants
-
-Four low-fidelity, static HTML/CSS mockups live in `/variants/`, one per candidate design
-direction, all rendering the same placeholder content (name/role, About, 3 fake projects, 2 fake
-blog posts, stub CV). No build step, no Node/Ruby/Go toolchain — just HTML and CSS.
-
-Open the comparison hub:
+## Development
 
 ```
-open variants/index.html
+npm install
+npm run dev       # http://localhost:4321/personal-webpage/
 ```
 
-or serve the whole repo and browse:
+## Build & preview
 
 ```
-python3 -m http.server
-# then visit http://localhost:8000/variants/
+npm run build      # outputs to dist/
+npm run preview    # serves dist/ under the /personal-webpage base, matching prod
 ```
 
-| Variant | Look | Approximates |
-| --- | --- | --- |
-| [`astrofy`](variants/astrofy/index.html) | Card/sidebar, avatar, rounded cards, light & airy | [Astrofy](https://github.com/manuelernestog/astrofy) (Astro) |
-| [`astro-modern`](variants/astro-modern/index.html) | Full-width minimal, large type, single accent | Minimal Astro portfolio themes |
-| [`jekyll-minimal`](variants/jekyll-minimal/index.html) | Classic blog/document feel, serif, understated | [Minima](https://github.com/jekyll/minima) (Jekyll) |
-| [`hugo-terminal`](variants/hugo-terminal/index.html) | Dark, monospace, terminal-prompt accents | [hugo-theme-terminal](https://github.com/panr/hugo-theme-terminal) (Hugo) |
+## Deploy
 
-Each variant folder has a `HANDOFF.md` covering what's stubbed, how to preview it standalone, and
-the estimated migration effort if it's the one picked.
+Deploys automatically via `.github/workflows/deploy.yml` on every push to `main` (checkout → npm
+ci → build → upload-pages-artifact → deploy-pages). Live at
+**https://neiro-data.github.io/personal-webpage/**.
 
-## Status
+**One-time human prerequisite:** in the repo's Settings → Pages, set Source to **GitHub Actions**
+before the first push to `main` — otherwise the workflow has nothing to deploy to.
 
-- **This phase:** static mockups only, for a look-and-feel decision. No GitHub Pages, no Actions,
-  no deploy config yet.
-- **Next phase (after a variant is picked):** scaffold the real framework (Astro/Jekyll/Hugo),
-  port the placeholder content to real content, wire up GitHub Pages.
+## Content
 
-See `plan-personal-webpage.md` for the full plan and `plan-first-commit.md` for the original
-brainstorm.
+Pages (Home/About, CV, Projects, Blog) currently hold **placeholder content** — a stand-in name,
+role, About blurb, 3 fake projects, 2 fake blog stubs, and stub CV sections — carried over from the
+design-comparison phase. Replacing it with real content is the next step, not done in this phase.
+
+Blog posts are inline in `src/pages/blog.astro` for now; moving to Astro content collections is a
+follow-up once there's real post content to manage.
+
+## Design history
+
+The `astro-modern` look was chosen after comparing four static HTML/CSS mockups
+(astrofy, astro-modern, jekyll-minimal, hugo-terminal). Those mockups are kept for reference under
+[`deprecated/variants/`](deprecated/variants/index.html) — not built, not deployed, safe to delete
+once no longer needed. See `plan-personal-webpage.md` (mockup phase) and
+`plan-astro-scaffold.md` (this phase) for the full history and decisions.

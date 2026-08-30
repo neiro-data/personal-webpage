@@ -1,0 +1,21 @@
+---
+interface Props {
+  active: 'home' | 'cv' | 'projects' | 'blog';
+}
+
+const { active } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const links = [
+  { key: 'home', label: 'Home', href: base },
+  { key: 'cv', label: 'CV', href: `${base}cv` },
+  { key: 'projects', label: 'Projects', href: `${base}projects` },
+  { key: 'blog', label: 'Blog', href: `${base}blog` },
+] as const;
+---
+
+<nav class="top">
+  {links.map((link) => (
+    <a href={link.href} class={link.key === active ? 'active' : undefined}>{link.label}</a>
+  ))}
+</nav>
