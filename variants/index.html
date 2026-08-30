@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design variants — comparison hub</title>
+<style>
+  :root{--bg:#f5f5f7;--card:#fff;--text:#1a1a1a;--muted:#666;--border:#e2e2e6;--accent:#4a4ae0}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+  .wrap{max-width:960px;margin:0 auto;padding:56px 24px}
+  h1{margin:0 0 8px}
+  p.lede{color:var(--muted);margin:0 0 40px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;text-decoration:none;color:var(--text);display:block}
+  .card:hover{border-color:var(--accent)}
+  .card h2{margin:0 0 6px;font-size:1.1rem}
+  .card p{margin:0 0 12px;color:var(--muted);font-size:.9rem}
+  .swatch{height:8px;border-radius:4px;margin-bottom:14px}
+  .astrofy .swatch{background:linear-gradient(90deg,#7c5cff,#ff7edb)}
+  .astro-modern .swatch{background:#0b6e4f}
+  .jekyll-minimal .swatch{background:#8a3b2e}
+  .hugo-terminal .swatch{background:#3ddc84}
+  .pages{font-size:.8rem;color:var(--muted)}
+  @media (max-width:640px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Personal site — design variants</h1>
+  <p class="lede">Four static mockups of the same content, different look &amp; feel. Pick one; the
+  real framework build happens after. See root <code>README.md</code> for details.</p>
+  <div class="grid">
+    <a class="card astrofy" href="astrofy/index.html">
+      <div class="swatch"></div>
+      <h2>astrofy</h2>
+      <p>Card/sidebar layout, avatar, rounded cards, light &amp; airy.</p>
+      <div class="pages">Home · CV · Projects · Blog</div>
+    </a>
+    <a class="card astro-modern" href="astro-modern/index.html">
+      <div class="swatch"></div>
+      <h2>astro-modern</h2>
+      <p>Full-width minimal, large type, single accent color.</p>
+      <div class="pages">Home · CV · Projects · Blog</div>
+    </a>
+    <a class="card jekyll-minimal" href="jekyll-minimal/index.html">
+      <div class="swatch"></div>
+      <h2>jekyll-minimal</h2>
+      <p>Classic document/blog feel, serif body, understated links.</p>
+      <div class="pages">Home · CV · Projects · Blog</div>
+    </a>
+    <a class="card hugo-terminal" href="hugo-terminal/index.html">
+      <div class="swatch"></div>
+      <h2>hugo-terminal</h2>
+      <p>Dark, monospace, terminal-prompt accents, high contrast.</p>
+      <div class="pages">Home · CV · Projects · Blog</div>
+    </a>
+  </div>
+</div>
+</body>
+</html>
