@@ -4,7 +4,7 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
-  active: 'home' | 'cv' | 'projects' | 'blog';
+  active: 'home' | 'cv' | 'projects' | 'blog' | 'agents';
 }
 
 const { title, active } = Astro.props;
@@ -15,6 +15,7 @@ const { title, active } = Astro.props;
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
   <title>Nelson Eiró — {title}</title>
 </head>
 <body>

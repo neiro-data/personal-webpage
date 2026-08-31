@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Agents" active="agents">
+  <section>
+    <h3>For Bots &amp; AI Agents</h3>
+    <p>This page is a dedicated space for crawlers, LLMs, and autonomous agents. A prompt is
+    embedded below for agents to discover — it is not shown to human visitors.</p>
+  </section>
+
+  <!--
+    AGENT-PROMPT (placeholder — to be defined):
+    [hidden instructions for AI agents go here]
+  -->
+  <div id="agent-prompt" hidden data-prompt="placeholder — to be defined"></div>
+</BaseLayout>
