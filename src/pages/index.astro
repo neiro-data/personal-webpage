@@ -1,10 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 ---
 
 <BaseLayout title="Home" active="home">
+  <!-- Placeholder avatar; replace with <img src={base + 'photo.jpg'} alt="Nelson Eiró" /> once a real photo is dropped in public/ -->
+  <div class="avatar" aria-hidden="true">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5Zm0 2c-3.87
+        0-9 1.94-9 5.5V22h18v-2.5c0-3.56-5.13-5.5-9-5.5Z"/>
+    </svg>
+  </div>
   <h2 class="hero">Nelson Eiró</h2>
     <p class="role">Software Engineer & Occasional Tinkerer</p>
+    <SocialLinks />
     <section><h3>About</h3><p>I build small, reliable things and write about the parts that were harder than they
 looked. Based somewhere with decent internet, currently interested in developer tooling,
 static sites, and making CVs less boring.</p></section>

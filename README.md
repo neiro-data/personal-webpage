@@ -28,12 +28,16 @@ before the first push to `main` — otherwise the workflow has nothing to deploy
 
 ## Content
 
-Pages (Home/About, CV, Projects, Blog) currently hold **placeholder content** — a stand-in name,
-role, About blurb, 3 fake projects, 2 fake blog stubs, and stub CV sections — carried over from the
-design-comparison phase. Replacing it with real content is the next step, not done in this phase.
+Pages: Home/About, CV, Education and Certifications (split out of CV), Projects, Blog, Agents.
+Home links out via GitHub/LinkedIn/mailto social icons (`src/components/SocialLinks.astro`), and
+the site uses the Inter font throughout.
 
-Blog posts are inline in `src/pages/blog.astro` for now; moving to Astro content collections is a
-follow-up once there's real post content to manage.
+Blog posts live as markdown files in `src/content/blog/*.md`, parsed via an Astro content
+collection (`src/content.config.ts`). `src/pages/blog/index.astro` lists posts (title, date,
+summary); `src/pages/blog/[...slug].astro` renders each post's full content at its own route.
+
+Projects page lists real public repos from GitHub, including individual subprojects under
+`neiro-data/useful-tools` linked to their own subfolder.
 
 ## Design history
 
