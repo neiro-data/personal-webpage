@@ -1,6 +1,6 @@
 ---
 interface Props {
-  active: 'home' | 'cv' | 'projects' | 'blog' | 'agents';
+  active: 'home' | 'cv' | 'education' | 'projects' | 'blog' | 'agents';
 }
 
 const { active } = Astro.props;
@@ -9,18 +9,15 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const links = [
   { key: 'home', label: 'Home', href: base },
   { key: 'cv', label: 'CV', href: `${base}cv` },
+  { key: 'education', label: 'Education and Certifications', href: `${base}education-and-certifications` },
   { key: 'projects', label: 'Projects', href: `${base}projects` },
   { key: 'blog', label: 'Blog', href: `${base}blog` },
   { key: 'agents', label: 'Agents', href: `${base}agents` },
 ] as const;
-
-// TODO: replace with real LinkedIn profile URL
-const linkedinUrl = 'https://www.linkedin.com/in/nelson-eiro';
 ---
 
 <nav class="top">
   {links.map((link) => (
     <a href={link.href} class={link.key === active ? 'active' : undefined}>{link.label}</a>
   ))}
-  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
 </nav>
