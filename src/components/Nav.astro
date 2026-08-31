@@ -1,6 +1,6 @@
 ---
 interface Props {
-  active: 'home' | 'cv' | 'projects' | 'blog';
+  active: 'home' | 'cv' | 'projects' | 'blog' | 'agents';
 }
 
 const { active } = Astro.props;
@@ -11,11 +11,16 @@ const links = [
   { key: 'cv', label: 'CV', href: `${base}cv` },
   { key: 'projects', label: 'Projects', href: `${base}projects` },
   { key: 'blog', label: 'Blog', href: `${base}blog` },
+  { key: 'agents', label: 'Agents', href: `${base}agents` },
 ] as const;
+
+// TODO: replace with real LinkedIn profile URL
+const linkedinUrl = 'https://www.linkedin.com/in/nelson-eiro';
 ---
 
 <nav class="top">
   {links.map((link) => (
     <a href={link.href} class={link.key === active ? 'active' : undefined}>{link.label}</a>
   ))}
+  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
 </nav>
